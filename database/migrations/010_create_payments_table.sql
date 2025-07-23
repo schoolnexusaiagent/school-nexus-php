@@ -1,0 +1,9 @@
+CREATE TABLE payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fee_id INT NOT NULL,
+    amount DECIMAL(12,2) NOT NULL,
+    payment_date DATE NOT NULL,
+    receipt_no VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (fee_id) REFERENCES fees(id) ON DELETE CASCADE
+);
